@@ -11,6 +11,21 @@ xmlns:tools="http://schemas.android.com/tools">
     android:roundIcon="@mipmap/ic_launcher_round"
     android:supportsRtl="true"
     android:theme="@style/Theme.Aliyablush">
+
+    <!-- ✅ HALAMAN SETELAH LOGIN -->
+    <activity android:name=".pertemuan_3.WelcomeActivity" />
+
+    <!-- ✅ HALAMAN PERTAMA (LOGIN) -->
+    <activity
+        android:name=".pertemuan_3.LoginActivity"
+        android:exported="true">
+
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+
+    </activity>
     <activity
         android:name=".pertemuan_2.MainActivity"
         android:exported="true">
