@@ -19,7 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity> <!-- DASHBOARD -->
-        <activity android:name=".pertemuan_4.DashboardActivity" /> <!-- CUSTOM -->
+        <activity android:name=".pertemuan_4.DashboardActivity" /> <!-- custom -->
         <activity android:name=".pertemuan_4.Custom1Activity" />
         <activity android:name=".pertemuan_4.Custom2Activity" />
     </application>
