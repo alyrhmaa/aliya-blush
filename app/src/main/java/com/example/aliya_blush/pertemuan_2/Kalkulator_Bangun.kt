@@ -7,3 +7,7 @@ fun hitungLuasSegitiga(alas: Double, tinggi: Double): Double {
 fun hitungVolumeKubus(sisi: Double): Double {
     return sisi * sisi * sisi
 }
+
+class Kalkulator_Bangun {
+
+}

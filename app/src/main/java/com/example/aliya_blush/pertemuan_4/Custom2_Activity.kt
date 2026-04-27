@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.aliya_blush.databinding.ActivityCustom2Binding
 
-class Custom2Activity : AppCompatActivity() {
+class Custom2_Activity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCustom2Binding
 

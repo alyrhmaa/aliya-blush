@@ -1,74 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:background="@color/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:padding="20dp"
+    <!-- TOOLBAR -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/primary"
+        android:title="Dashboard"
+        android:titleTextColor="@android:color/white"/>
 
-        <TextView
-            android:id="@+id/tvTitle"
-            android:text="Dashboard"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="@color/text_primary"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+    <!-- CONTENT -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tvDesc"
-            android:text="Deskripsi"
-            android:textSize="14sp"
-            android:textColor="@color/text_primary"
-            android:layout_marginBottom="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <!-- BUTTON 1 -->
-        <Button
-            android:id="@+id/btn1"
-            android:text="Bangun Ruang"
-            android:textColor="@color/white"
-            android:backgroundTint="@color/primary"
-            android:layout_marginBottom="12dp"
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="20dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content">
 
-        <!-- BUTTON 2 -->
-        <Button
-            android:id="@+id/btn2"
-            android:text="Custom 1"
-            android:textColor="@color/white"
-            android:backgroundTint="@color/primary"
-            android:layout_marginBottom="12dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tvTitle"
+                android:text="Dashboard"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
-        <!-- BUTTON 3 -->
-        <Button
-            android:id="@+id/btn3"
-            android:text="Custom 2"
-            android:textColor="@color/white"
-            android:backgroundTint="@color/primary"
-            android:layout_marginBottom="12dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tvDesc"
+                android:text="Deskripsi"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
-        <!-- LOGOUT -->
-        <Button
-            android:id="@+id/btnLogout"
-            android:text="Logout"
-            android:textColor="@color/white"
-            android:backgroundTint="#FF4B5C"
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            <!-- BUTTON 1 -->
+            <Button
+                android:id="@+id/btn1"
+                android:text="Bangun Ruang"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/primary"
+                android:layout_marginBottom="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-    </LinearLayout>
-</ScrollView>
+            <!-- BUTTON 2 -->
+            <Button
+                android:id="@+id/btn2"
+                android:text="Custom 1"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/primary"
+                android:layout_marginBottom="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!-- BUTTON 3 -->
+            <Button
+                android:id="@+id/btn3"
+                android:text="Custom 2"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/primary"
+                android:layout_marginBottom="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!-- WEBVIEW BUTTON -->
+            <Button
+                android:id="@+id/btnWeb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Website Desa"
+                android:layout_marginTop="10dp"/>
+
+            <!-- LOGOUT -->
+            <Button
+                android:id="@+id/btnLogout"
+                android:text="Logout"
+                android:textColor="@color/white"
+                android:backgroundTint="#FF4B5C"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

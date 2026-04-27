@@ -4,12 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import com.example.aliya_blush.databinding.ActivityDashboardBinding
-import com.example.aliya_blush.pertemuan_3.LoginActivity
-import com.example.aliya_blush.pertemuan_2.MainActivity
-import com.google.android.material.snackbar.Snackbar
+import com.example.aliya_blush.pertemuan_2.Kalkulator_Bangun
+import com.example.aliya_blush.pertemuan_3.Login_Activity
+import com.example.aliya_blush.pertemuan_6.WebView_Activity
 
-class DashboardActivity : AppCompatActivity() {
+class Dashboard_Activity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDashboardBinding
 
@@ -19,48 +20,49 @@ class DashboardActivity : AppCompatActivity() {
         binding = ActivityDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val username = intent.getStringExtra("USERNAME")
+        // TOOLBAR
+        val toolbar = findViewById<Toolbar>(binding.toolbar.id)
+        setSupportActionBar(toolbar)
 
-        binding.tvTitle.text = "Dashboard"
-        binding.tvDesc.text = "Selamat datang, $username 👋"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        // Tombol 1 → Bangun ruang
+        val sp = getSharedPreferences("LOGIN", MODE_PRIVATE)
+        val username = sp.getString("username", "")
+
+        binding.tvDesc.text = "Selamat Datang, $username 👋"
+
         binding.btn1.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            intent.putExtra("TITLE", "Rumus Bangun Ruang")
-            intent.putExtra("DESC", "Hitung luas & volume")
-            startActivity(intent)
+            startActivity(Intent(this, Kalkulator_Bangun::class.java))
         }
 
-        // Tombol 2 → Custom 1
         binding.btn2.setOnClickListener {
-            val intent = Intent(this, Custom1Activity::class.java)
-            intent.putExtra("TITLE", "Custom 1")
-            intent.putExtra("DESC", "Halaman custom pertama")
-            startActivity(intent)
+            startActivity(Intent(this, Custom1_Activity::class.java))
         }
 
-        // Tombol 3 → Custom 2
         binding.btn3.setOnClickListener {
-            val intent = Intent(this, Custom2Activity::class.java)
-            intent.putExtra("TITLE", "Custom 2")
-            intent.putExtra("DESC", "Halaman custom kedua")
-            startActivity(intent)
+            startActivity(Intent(this, Custom2_Activity::class.java))
         }
 
-        // Logout
+        binding.btnWeb.setOnClickListener {
+            startActivity(Intent(this, WebView_Activity::class.java))
+        }
+
         binding.btnLogout.setOnClickListener {
             AlertDialog.Builder(this)
-                .setTitle("Konfirmasi")
-                .setMessage("Yakin mau logout?")
+                .setTitle("Logout")
+                .setMessage("Yakin keluar?")
                 .setPositiveButton("Ya") { _, _ ->
-                    startActivity(Intent(this, LoginActivity::class.java))
+                    sp.edit().clear().apply()
+                    startActivity(Intent(this, Login_Activity::class.java))
                     finish()
                 }
-                .setNegativeButton("Tidak") { _, _ ->
-                    Snackbar.make(binding.root, "Logout dibatalkan", Snackbar.LENGTH_SHORT).show()
-                }
+                .setNegativeButton("Tidak", null)
                 .show()
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }
