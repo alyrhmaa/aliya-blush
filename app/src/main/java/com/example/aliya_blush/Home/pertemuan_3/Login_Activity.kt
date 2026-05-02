@@ -1,11 +1,11 @@
-package com.example.aliya_blush.pertemuan_3
+package com.example.aliya_blush.Home.pertemuan_3
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.aliya_blush.databinding.ActivityLoginBinding
-import com.example.aliya_blush.pertemuan_4.Dashboard_Activity
+import com.example.aliya_blush.Home.pertemuan_4.Dashboard_Activity
 
 class Login_Activity : AppCompatActivity() {
 

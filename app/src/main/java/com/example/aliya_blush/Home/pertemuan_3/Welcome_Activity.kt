@@ -1,4 +1,4 @@
-package com.example.aliya_blush.pertemuan_3
+package com.example.aliya_blush.Home.pertemuan_3
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

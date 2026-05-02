@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- INTERNET (untuk WebView) -->
+    <!-- INTERNET -->
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -17,9 +17,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
 
-        <!-- ✅ SPLASH (HARUS JADI LAUNCHER) -->
+        <!-- 🔥 LAUNCHER (APP START DI SINI) -->
         <activity
-            android:name=".pertemuan_6.Splash_Activity"
+            android:name=".BaseActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,33 +27,43 @@
             </intent-filter>
         </activity>
 
-        <!-- LOGIN -->
+        <!-- AUTH / LOGIN -->
         <activity
-            android:name=".pertemuan_3.Login_Activity"
+            android:name=".AuthActivity"
+            android:exported="false" />
+
+        <!-- KALKULATOR (MainActivity kamu) -->
+        <activity
+            android:name=".Home.pertemuan_2.MainActivity"
+            android:exported="false" />
+
+        <!-- LOGIN LAMA -->
+        <activity
+            android:name=".Home.pertemuan_3.Login_Activity"
             android:exported="false" />
 
         <!-- DASHBOARD -->
         <activity
-            android:name=".pertemuan_4.Dashboard_Activity"
+            android:name=".Home.pertemuan_4.Dashboard_Activity"
             android:exported="false" />
 
         <!-- CUSTOM -->
         <activity
-            android:name=".pertemuan_4.Custom1_Activity"
+            android:name=".Home.pertemuan_4.Custom1_Activity"
             android:exported="false" />
 
         <activity
-            android:name=".pertemuan_4.Custom2_Activity"
+            android:name=".Home.pertemuan_4.Custom2_Activity"
+            android:exported="false" />
+
+        <!-- SPLASH -->
+        <activity
+            android:name=".Home.pertemuan_6.Splash_Activity"
             android:exported="false" />
 
         <!-- WEBVIEW -->
         <activity
-            android:name=".pertemuan_6.WebView_Activity"
-            android:exported="false" />
-
-        <!-- (OPSIONAL) MAIN LAMA -->
-        <activity
-            android:name=".pertemuan_2.MainActivity"
+            android:name=".Home.pertemuan_6.WebView_Activity"
             android:exported="false" />
 
     </application>

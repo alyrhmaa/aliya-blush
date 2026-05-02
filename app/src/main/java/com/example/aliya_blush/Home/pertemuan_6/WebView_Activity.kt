@@ -1,4 +1,4 @@
-package com.example.aliya_blush.pertemuan_6
+package com.example.aliya_blush.Home.pertemuan_6
 
 import android.os.Bundle
 import android.webkit.WebViewClient

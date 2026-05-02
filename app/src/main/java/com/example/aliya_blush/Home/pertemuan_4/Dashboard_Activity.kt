@@ -1,4 +1,4 @@
-package com.example.aliya_blush.pertemuan_4
+package com.example.aliya_blush.Home.pertemuan_4
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,9 +6,9 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.aliya_blush.databinding.ActivityDashboardBinding
-import com.example.aliya_blush.pertemuan_2.Kalkulator_Bangun
-import com.example.aliya_blush.pertemuan_3.Login_Activity
-import com.example.aliya_blush.pertemuan_6.WebView_Activity
+import com.example.aliya_blush.Home.pertemuan_2.Kalkulator_Bangun
+import com.example.aliya_blush.Home.pertemuan_3.Login_Activity
+import com.example.aliya_blush.Home.pertemuan_6.WebView_Activity
 
 class Dashboard_Activity : AppCompatActivity() {
 

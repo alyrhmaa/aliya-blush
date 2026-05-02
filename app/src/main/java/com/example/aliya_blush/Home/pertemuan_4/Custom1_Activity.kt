@@ -1,23 +1,21 @@
-package com.example.aliya_blush.pertemuan_4
+package com.example.aliya_blush.Home.pertemuan_4
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.aliya_blush.databinding.ActivityCustom2Binding
+import com.example.aliya_blush.databinding.ActivityCustom1Binding
 
-class Custom2_Activity : AppCompatActivity() {
+class Custom1_Activity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityCustom2Binding
+    private lateinit var binding: ActivityCustom1Binding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityCustom2Binding.inflate(layoutInflater)
+        binding = ActivityCustom1Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.tvTitle.text = intent.getStringExtra("TITLE")
         binding.tvDesc.text = intent.getStringExtra("DESC")
-        binding.btnBack.setOnClickListener {
-            finish()
+
         }
     }
-}

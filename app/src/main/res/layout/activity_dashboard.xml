@@ -82,6 +82,13 @@
                 android:text="Website Desa"
                 android:layout_marginTop="10dp"/>
 
+            <Button
+                android:id="@+id/btnSeventh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pertemuan 7"
+                android:layout_marginTop="10dp"/>
+
             <!-- LOGOUT -->
             <Button
                 android:id="@+id/btnLogout"
