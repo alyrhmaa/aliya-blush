@@ -12,18 +12,20 @@
         android:layout_height="wrap_content">
 
         <!-- TOOLBAR -->
+
+        <!-- HEADER -->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="0dp"
             android:layout_height="?attr/actionBarSize"
             android:background="#EC407A"
-            app:title="Bina Desa"
-            app:titleTextColor="@android:color/white"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="Home"
+            app:titleTextColor="@android:color/white" />
 
-        <!-- HEADER -->
         <androidx.cardview.widget.CardView
             android:id="@+id/headerCard"
             android:layout_width="0dp"

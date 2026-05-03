@@ -9,7 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import com.example.aliya_blush.AuthActivity
-import com.example.aliya_blush.Home.pertemuan_2.Kalkulator_Bangun
+import com.example.aliya_blush.Home.pertemuan_2.MainActivity
 import com.example.aliya_blush.Home.pertemuan_4.Custom1_Activity
 import com.example.aliya_blush.Home.pertemuan_4.Custom2_Activity
 import com.example.aliya_blush.Home.pertemuan_6.WebView_Activity
@@ -55,7 +55,7 @@ class HomeFragment : Fragment() {
 
             val intent = Intent(
                 requireContext(),
-                Kalkulator_Bangun::class.java
+                MainActivity::class.java
             )
 
             startActivity(intent)

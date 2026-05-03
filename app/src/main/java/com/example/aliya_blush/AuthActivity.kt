@@ -76,12 +76,8 @@ class AuthActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
 
-                // Pindah ke MainActivity
-                val intent = Intent(
-                    this,
-                    MainActivity::class.java
-                )
-
+                // Pindah ke BaseActivity
+                val intent = Intent(this, BaseActivity::class.java)
                 startActivity(intent)
                 finish()
 
