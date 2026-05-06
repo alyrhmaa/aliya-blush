@@ -10,6 +10,19 @@
         android:layout_height="match_parent">
 
         <EditText
+            android:id="@+id/etNama"
+            android:hint="Nama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/etPhone"
+            android:hint="No HP"
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
             android:id="@+id/etUsername"
             android:hint="Username"
             android:layout_width="match_parent"
@@ -23,14 +36,8 @@
             android:layout_height="wrap_content"/>
 
         <Button
-            android:id="@+id/btnLogin"
-            android:text="Login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <Button
-            android:id="@+id/btnRegister"
-            android:text="Registrasi"
+            android:id="@+id/btnSubmit"
+            android:text="Daftar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 

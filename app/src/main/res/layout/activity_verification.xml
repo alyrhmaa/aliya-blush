@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#FFF1F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Verifikasi OTP"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#D63384"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Info -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Masukkan OTP (Nomor HP kamu)"
+            android:textColor="#555555"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- Input OTP -->
+        <EditText
+            android:id="@+id/etOtp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Masukkan OTP"
+            android:inputType="number"
+            android:padding="12dp"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- Button Verify -->
+        <Button
+            android:id="@+id/btnVerify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Verifikasi"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#D63384"/>
+
+    </LinearLayout>
+
+</ScrollView>

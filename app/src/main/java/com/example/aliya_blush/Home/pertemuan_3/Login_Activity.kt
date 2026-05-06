@@ -19,32 +19,41 @@ class Login_Activity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
+        val spRegister = getSharedPreferences("USER_DATA", MODE_PRIVATE)
+
         binding.btnLogin.setOnClickListener {
 
             val username = binding.etUsername.text.toString()
             val password = binding.etPassword.text.toString()
+
+            val savedUsername = spRegister.getString("username", "")
+            val savedPassword = spRegister.getString("password", "")
 
             if (username.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Harus diisi!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            // 🔥 LOGIN DINAMIS
+            // RULE 1
             if (username == password) {
 
-                val sp = getSharedPreferences("LOGIN", MODE_PRIVATE)
-                val editor = sp.edit()
+                startActivity(Intent(this, Dashboard_Activity::class.java))
+                finish()
 
-                editor.putBoolean("isLogin", true)
-                editor.putString("username", username)
-                editor.apply()
+            }
+            // RULE 2
+            else if (username == savedUsername && password == savedPassword) {
 
                 startActivity(Intent(this, Dashboard_Activity::class.java))
                 finish()
 
             } else {
-                Toast.makeText(this, "Username & Password harus sama!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Login gagal!", Toast.LENGTH_SHORT).show()
             }
+        }
+
+        binding.btnRegister.setOnClickListener {
+            startActivity(Intent(this, Register_Activity::class.java))
         }
     }
 }
