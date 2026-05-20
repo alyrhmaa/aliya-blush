@@ -1,4 +1,4 @@
-package com.example.aliya_blush.Profile
+package com.example.aliya_blush.Home.pertemuan_10
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,16 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.aliya_blush.R
 
-class TabAFragment : Fragment() {
+class TabBFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tab_a, container, false)
+        return inflater.inflate(R.layout.fragment_tab_b, container, false)
     }
-
-    companion object {
     }
-}

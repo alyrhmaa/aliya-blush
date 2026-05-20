@@ -19,7 +19,7 @@
 
         <!-- PROFILE -->
         <activity
-            android:name=".Profile.TenthActivity"
+            android:name=".Home.pertemuan_10.TenthActivity"
             android:exported="false" />
 
         <!-- LAUNCHER -->

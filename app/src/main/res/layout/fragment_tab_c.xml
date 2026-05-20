@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Program Kerja Utama"
+        android:text="Kontak &amp; Lokasi"
         android:textSize="22sp"
         android:textStyle="bold"
         android:textColor="#C2185B"
@@ -24,10 +24,18 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="1. Digitalisasi UMKM Desa\n2. Pelatihan Literasi Digital Remaja\n3. Pembuatan Website Profil Desa\n4. Sosialisasi Keamanan Siber"
+        android:text="📍 Alamat: Balai Desa Sukamaju, Kec. Digital, Kab. Inovasi\n\n📧 Email: binadesa@blushie.id\n\n📞 WhatsApp: +62 812-3456-7890\n\n🌐 Instagram: @blushie_binadesa"
         android:textSize="16sp"
         android:textColor="#880E4F"
         android:fontFamily="@font/poppins_regularr"
         android:lineSpacingExtra="8dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Hubungi Kami"
+        android:backgroundTint="#D81B60"
+        android:textColor="@android:color/white"/>
 
 </LinearLayout>

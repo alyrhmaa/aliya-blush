@@ -8,9 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.aliya_blush.Home.pertemuan_10.TenthActivity
 import com.example.aliya_blush.Home.pertemuan_2.MainActivity
 import com.example.aliya_blush.Home.pertemuan_4.Custom1_Activity
-import com.example.aliya_blush.Home.pertemuan_4.Custom2_Activity
 import com.example.aliya_blush.Home.pertemuan_6.WebView_Activity
 import com.example.aliya_blush.Home.pertemuan_9.NinthActivity
 import com.example.aliya_blush.Home.service.ServiceActivity
@@ -58,12 +58,13 @@ class HomeFragment : Fragment() {
             startActivity(Intent(requireContext(), Custom1_Activity::class.java))
         }
 
-        binding.btnToCustom2.setOnClickListener {
-            startActivity(Intent(requireContext(), Custom2_Activity::class.java))
-        }
-
         binding.btnToWeb.setOnClickListener {
             startActivity(Intent(requireContext(), WebView_Activity::class.java))
+        }
+
+        // Satu button untuk mengarahkan ke halaman Bina Desa (yang berisi Tab A, B, C)
+        binding.btnToTenth.setOnClickListener {
+            startActivity(Intent(requireContext(), TenthActivity::class.java))
         }
 
         // LOGOUT

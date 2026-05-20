@@ -20,7 +20,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- TOOLBAR -->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="0dp"
@@ -32,7 +31,6 @@
             app:title="Home"
             app:titleTextColor="@android:color/white" />
 
-        <!-- HEADER -->
         <androidx.cardview.widget.CardView
             android:id="@+id/headerCard"
             android:layout_width="0dp"
@@ -54,18 +52,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/angkor"
                     android:text="Selamat Datang 👋"
                     android:textColor="@android:color/white"
                     android:textSize="28sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/tvDesc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:fontFamily="@font/poppins_boldd"
                     android:text="Portal layanan digital desa berbasis Android."
                     android:textColor="#FFF0F5"
                     android:textSize="15sp" />
@@ -74,14 +69,12 @@
 
         </androidx.cardview.widget.CardView>
 
-        <!-- MENU -->
         <TextView
             android:id="@+id/tvMenu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="10dp"
-            android:fontFamily="@font/poppins_regularr"
             android:text="Menu Portal Desa"
             android:textColor="#C2185B"
             android:textSize="22sp"
@@ -89,7 +82,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/headerCard" />
 
-        <!-- GRID MENU -->
         <androidx.gridlayout.widget.GridLayout
             android:id="@+id/gridMenu"
             android:layout_width="0dp"
@@ -101,7 +93,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvMenu">
 
-            <!-- LAYANAN -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardLayanan"
                 android:layout_width="160dp"
@@ -135,7 +126,6 @@
 
             </androidx.cardview.widget.CardView>
 
-            <!-- INFORMASI -->
             <androidx.cardview.widget.CardView
                 android:layout_width="160dp"
                 android:layout_height="130dp"
@@ -170,7 +160,6 @@
 
         </androidx.gridlayout.widget.GridLayout>
 
-        <!-- BUTTON KALKULATOR -->
         <Button
             android:id="@+id/btnToKalkulator"
             android:layout_width="0dp"
@@ -180,61 +169,49 @@
             android:backgroundTint="#EC407A"
             android:text="Kalkulator Bangun"
             android:textColor="@android:color/white"
-            android:textSize="16sp"
-            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/gridMenu" />
 
-        <!-- BUTTON CUSTOM 1 -->
         <Button
             android:id="@+id/btnToCustom1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:backgroundTint="#D81B60"
             android:text="Custom Activity 1"
             android:textColor="@android:color/white"
-            android:textSize="16sp"
-            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btnToKalkulator" />
 
-        <!-- BUTTON CUSTOM 2 -->
-        <Button
-            android:id="@+id/btnToCustom2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="24dp"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="#C2185B"
-            android:text="Custom Activity 2"
-            android:textColor="@android:color/white"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btnToCustom1" />
-
-        <!-- BUTTON WEB -->
         <Button
             android:id="@+id/btnToWeb"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:backgroundTint="#AD1457"
             android:text="Website Desa"
             android:textColor="@android:color/white"
-            android:textSize="16sp"
-            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btnToCustom2" />
+            app:layout_constraintTop_toBottomOf="@id/btnToCustom1" />
 
-        <!-- LOGOUT -->
+        <Button
+            android:id="@+id/btnToTenth"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#9C27B0"
+            android:text="Bina Desa"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnToWeb" />
+
         <Button
             android:id="@+id/btnLogout"
             android:layout_width="0dp"
@@ -245,11 +222,10 @@
             android:backgroundTint="#880E4F"
             android:text="Logout"
             android:textColor="@android:color/white"
-            android:textSize="16sp"
-            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btnToWeb" />
+            app:layout_constraintTop_toBottomOf="@id/btnToTenth" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
