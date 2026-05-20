@@ -17,27 +17,38 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
 
-        <!-- 🔥 LAUNCHER (APP START DI SINI) -->
+        <!-- PROFILE -->
+        <activity
+            android:name=".Profile.TenthActivity"
+            android:exported="false" />
+
+        <!-- LAUNCHER -->
         <activity
             android:name=".BaseActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <!-- AUTH / LOGIN -->
+        <!-- AUTH -->
         <activity
             android:name=".AuthActivity"
             android:exported="false" />
 
-        <!-- KALKULATOR (MainActivity kamu) -->
+        <!-- REGISTER -->
         <activity
-            android:name=".Home.pertemuan_2.MainActivity"
+            android:name=".Home.pertemuan_3.Register_Activity"
             android:exported="false" />
 
-        <!-- LOGIN LAMA -->
+        <!-- OTP -->
+        <activity
+            android:name=".Home.pertemuan_3.Verification_Activity"
+            android:exported="false" />
+
+        <!-- LOGIN -->
         <activity
             android:name=".Home.pertemuan_3.Login_Activity"
             android:exported="false" />
@@ -45,6 +56,11 @@
         <!-- DASHBOARD -->
         <activity
             android:name=".Home.pertemuan_4.Dashboard_Activity"
+            android:exported="false" />
+
+        <!-- MAIN -->
+        <activity
+            android:name=".Home.pertemuan_2.MainActivity"
             android:exported="false" />
 
         <!-- CUSTOM -->
