@@ -3,19 +3,25 @@ package com.example.aliya_blush.Home
 import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.aliya_blush.AuthActivity
+import com.example.aliya_blush.Data.Api.PostApiClient
+import com.example.aliya_blush.Home.berita.PostAdapter
+import com.example.aliya_blush.Home.berita.PhotoAdapter
 import com.example.aliya_blush.Home.pertemuan_2.MainActivity
 import com.example.aliya_blush.Home.pertemuan_4.Custom1_Activity
 import com.example.aliya_blush.Home.pertemuan_4.Custom2_Activity
 import com.example.aliya_blush.Home.pertemuan_6.WebView_Activity
-import com.example.aliya_blush.Home.pertemuan_9.NinthActivity
 import com.example.aliya_blush.Home.service.ServiceActivity
 import com.example.aliya_blush.databinding.FragmentHomeBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
 
@@ -27,7 +33,6 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -41,11 +46,20 @@ class HomeFragment : Fragment() {
         (requireActivity() as AppCompatActivity)
             .supportActionBar?.title = "Home"
 
-        val sharedPref = requireContext().getSharedPreferences(
-            "user_pref",
-            MODE_PRIVATE
-        )
+        // =====================
+        // RECYCLERVIEW BERITA
+        // =====================
+        binding.rvBerita.layoutManager = LinearLayoutManager(requireContext())
+        loadBerita()
 
+        // =====================
+        // RECYCLERVIEW GALLERY (Disesuaikan ke Berita Desa)
+        // =====================
+        loadPhoto()
+
+        // =====================
+        // BUTTON CLICK LISTENERS
+        // =====================
         binding.cardLayanan.setOnClickListener {
             startActivity(Intent(requireContext(), ServiceActivity::class.java))
         }
@@ -68,25 +82,51 @@ class HomeFragment : Fragment() {
 
         // LOGOUT
         binding.btnLogout.setOnClickListener {
-
             MaterialAlertDialogBuilder(requireContext())
                 .setTitle("Konfirmasi Logout")
                 .setMessage("Apakah Anda yakin ingin keluar?")
                 .setPositiveButton("Ya") { dialog, _ ->
-
-                    sharedPref.edit().clear().apply()
-
+                    requireContext().getSharedPreferences("user_pref", MODE_PRIVATE)
+                        .edit().clear().apply()
                     dialog.dismiss()
-
-                    val intent = Intent(requireContext(), NinthActivity::class.java)
-                    intent.flags =
-                        Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-
-                    startActivity(intent)
+                    startActivity(Intent(requireContext(), AuthActivity::class.java))
                     requireActivity().finish()
                 }
                 .setNegativeButton("Tidak", null)
                 .show()
+        }
+    }
+
+    private fun loadBerita() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            try {
+                val response = PostApiClient.apiService.getPosts()
+                binding.rvBerita.adapter = PostAdapter(response.posts)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+    }
+
+    private fun loadPhoto() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            try {
+                // Kita gunakan API Posts agar teksnya tentang artikel/berita
+                val response = PostApiClient.apiService.getPosts()
+
+                // Kita manipulasi datanya agar setiap berita memiliki gambar bertema "Desa"
+                // Menggunakan loremflickr dengan keyword 'village,people' agar sesuai tema aplikasi
+                val beritaDesaDenganGambar = response.posts.map { post ->
+                    post.copy(image = "https://loremflickr.com/400/300/village,people?lock=${post.id}")
+                }
+
+                binding.rvGallery.layoutManager = GridLayoutManager(requireContext(), 2)
+                binding.rvGallery.adapter = PhotoAdapter(beritaDesaDenganGambar)
+
+            } catch (e: Exception) {
+                e.printStackTrace()
+                Toast.makeText(requireContext(), "Gagal memuat gallery", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
@@ -95,3 +135,4 @@ class HomeFragment : Fragment() {
         _binding = null
     }
 }
+//perubahan p11
