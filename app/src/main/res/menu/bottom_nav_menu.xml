@@ -16,4 +16,14 @@
         android:icon="@android:drawable/ic_menu_myplaces"
         android:title="Profile"/>
 
+    <item
+        android:id="@+id/note"
+        android:icon="@drawable/ic_notes"
+        android:title="Kegiatan"/>
+
+    <item
+        android:id="@+id/usulan"
+        android:icon="@android:drawable/ic_menu_edit"
+        android:title="Usulan"/>
+
 </menu>

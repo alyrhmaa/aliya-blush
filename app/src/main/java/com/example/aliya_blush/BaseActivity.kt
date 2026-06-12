@@ -10,6 +10,8 @@ import androidx.fragment.app.Fragment
 import com.example.aliya_blush.About.AboutFragment
 import com.example.aliya_blush.Home.HomeFragment
 import com.example.aliya_blush.More.ProfileFragment
+import com.example.aliya_blush.Note.FragmentNote
+import com.example.aliya_blush.Usulan.UsulanFragment
 import com.example.aliya_blush.databinding.ActivityBaseBinding
 import com.example.aliya_blush.onboarding.OnBoardingActivity
 
@@ -20,9 +22,11 @@ class BaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // 1. CEK ONBOARDING
-        val onboardingSelesai = getSharedPreferences("onboarding", MODE_PRIVATE)
-            .getBoolean("selesai", false)
+        // CEK ONBOARDING
+        val onboardingSelesai = getSharedPreferences(
+            "onboarding",
+            MODE_PRIVATE
+        ).getBoolean("selesai", false)
 
         if (!onboardingSelesai) {
             startActivity(Intent(this, OnBoardingActivity::class.java))
@@ -30,9 +34,11 @@ class BaseActivity : AppCompatActivity() {
             return
         }
 
-        // 2. CEK LOGIN
-        val isLogin = getSharedPreferences("user_pref", MODE_PRIVATE)
-            .getBoolean("isLogin", false)
+        // CEK LOGIN
+        val isLogin = getSharedPreferences(
+            "user_pref",
+            MODE_PRIVATE
+        ).getBoolean("isLogin", false)
 
         if (!isLogin) {
             startActivity(Intent(this, AuthActivity::class.java))
@@ -40,37 +46,61 @@ class BaseActivity : AppCompatActivity() {
             return
         }
 
-        // 3. JIKA SUDAH SEMUA, TAMPILKAN HOME
         enableEdgeToEdge()
+
         binding = ActivityBaseBinding.inflate(layoutInflater)
+
         setContentView(binding.root)
 
         ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+
+            val systemBars =
+                insets.getInsets(WindowInsetsCompat.Type.systemBars())
+
+            v.setPadding(
+                systemBars.left,
+                systemBars.top,
+                systemBars.right,
+                systemBars.bottom
+            )
+
             insets
         }
 
-        // Fragment pertama (Default Home)
+        // Fragment pertama
         if (savedInstanceState == null) {
             replaceFragment(HomeFragment())
         }
 
-        // Bottom Navigation
         binding.bottomNavView.setOnItemSelectedListener {
+
             when (it.itemId) {
+
                 R.id.home -> {
                     replaceFragment(HomeFragment())
                     true
                 }
+
                 R.id.about -> {
                     replaceFragment(AboutFragment())
                     true
                 }
+
+                R.id.note -> {
+                    replaceFragment(FragmentNote())
+                    true
+                }
+
+                R.id.usulan -> {
+                    replaceFragment(UsulanFragment())
+                    true
+                }
+
                 R.id.profile -> {
                     replaceFragment(ProfileFragment())
                     true
                 }
+
                 else -> false
             }
         }
