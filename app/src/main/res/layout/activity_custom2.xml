@@ -1,60 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@color/background"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FDF4F7">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:padding="20dp"
-        android:gravity="center_horizontal"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="?attr/actionBarSize"
+        android:background="#D81B60"
+        app:title="Layanan Bina Desa"
+        app:titleTextColor="@android:color/white" />
 
-        <Button
-            android:id="@+id/btnBack"
-            android:text="← Kembali"
-            android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"/>
+            android:orientation="vertical"
+            android:padding="20dp">
 
-        <!-- TITLE -->
-        <TextView
-            android:id="@+id/tvTitle"
-            android:text="Custom 2"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:textColor="@color/text_primary"
-            android:layout_marginBottom="8dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            <!-- MaterialCardView Implementation -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp"
+                app:strokeColor="#D81B60"
+                app:strokeWidth="1dp">
 
-        <!-- DESC -->
-        <TextView
-            android:id="@+id/tvDesc"
-            android:text="Deskripsi halaman custom"
-            android:textSize="14sp"
-            android:textColor="@color/text_primary"
-            android:layout_marginBottom="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:gravity="center">
 
-        <!-- GAMBAR -->
-        <ImageView
-            android:src="@android:drawable/ic_menu_camera"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginBottom="20dp"/>
+                    <TextView
+                        android:id="@+id/tvTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pemberdayaan Masyarakat"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="#AD1457" />
 
-        <!-- TEXT TAMBAHAN -->
-        <TextView
-            android:text="Ini adalah halaman custom 2 🚀"
-            android:textSize="16sp"
-            android:textColor="@color/text_primary"
-            android:gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:layout_marginTop="16dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/aliya" />
 
-    </LinearLayout>
-</ScrollView>
+                    <TextView
+                        android:id="@+id/tvDesc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Melalui program pemberdayaan, warga desa dilatih untuk mengelola potensi wisata dan kerajinan lokal guna menciptakan kemandirian ekonomi desa."
+                        android:textSize="16sp"
+                        android:textColor="#880E4F"
+                        android:lineSpacingExtra="4dp" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Button using finish() -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBack"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="24dp"
+                android:text="TUTUP HALAMAN"
+                android:backgroundTint="#D81B60"
+                app:cornerRadius="12dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

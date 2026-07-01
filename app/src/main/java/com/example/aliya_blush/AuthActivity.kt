@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.example.aliya_blush.Home.pertemuan_3.Register_Activity
 import com.example.aliya_blush.databinding.ActivityAuthBinding
 
 class AuthActivity : AppCompatActivity() {
@@ -18,6 +19,7 @@ class AuthActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+        val userDataPref = getSharedPreferences("USER_DATA", MODE_PRIVATE)
 
         // Jika sudah login, langsung lempar ke BaseActivity
         val isLogin = sharedPref.getBoolean("isLogin", false)
@@ -29,23 +31,34 @@ class AuthActivity : AppCompatActivity() {
 
         // BUTTON LOGIN
         binding.btnLogin.setOnClickListener {
-            val username = binding.etUsername.text.toString()
-            val password = binding.etPassword.text.toString()
+            val usernameInput = binding.etUsername.text.toString()
+            val passwordInput = binding.etPassword.text.toString()
 
-            // Logic login sederhana: username harus sama dengan password
-            if (username.isNotEmpty() && password.isNotEmpty() && username == password) {
+            // Ambil data dari registrasi
+            val registeredUser = userDataPref.getString("username", null)
+            val registeredPass = userDataPref.getString("password", null)
+
+            if (usernameInput.isEmpty() || passwordInput.isEmpty()) {
+                Toast.makeText(this, "Isi username dan password!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            // Logic login: Cek ke data registrasi atau default admin:admin
+            val isValid = (usernameInput == registeredUser && passwordInput == registeredPass) || 
+                          (usernameInput == "admin" && passwordInput == "admin")
+
+            if (isValid) {
                 val editor = sharedPref.edit()
                 editor.putBoolean("isLogin", true)
-                editor.putString("username", username)
+                editor.putString("username", usernameInput)
                 editor.apply()
 
                 Toast.makeText(
                     this,
-                    "Login Berhasil! Selamat Datang $username 👋",
+                    "Login Berhasil! Selamat Datang $usernameInput 👋",
                     Toast.LENGTH_SHORT
                 ).show()
 
-                // KE BASE ACTIVITY (DASHBOARD)
                 startActivity(Intent(this, BaseActivity::class.java))
                 finish()
             } else {
@@ -55,6 +68,11 @@ class AuthActivity : AppCompatActivity() {
                     .setPositiveButton("Tutup", null)
                     .show()
             }
+        }
+
+        // PINDAH KE REGISTER
+        binding.tvToRegister.setOnClickListener {
+            startActivity(Intent(this, Register_Activity::class.java))
         }
     }
 }

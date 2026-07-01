@@ -4,6 +4,9 @@ import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
@@ -20,6 +23,7 @@ import com.example.aliya_blush.Home.pertemuan_2.MainActivity
 import com.example.aliya_blush.Home.pertemuan_4.Custom1_Activity
 import com.example.aliya_blush.Home.pertemuan_4.Custom2_Activity
 import com.example.aliya_blush.Home.pertemuan_6.WebView_Activity
+import com.example.aliya_blush.R
 import com.example.aliya_blush.Usulan.UsulanFormActivity
 import com.example.aliya_blush.databinding.FragmentHomeBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -29,6 +33,11 @@ class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -140,6 +149,25 @@ class HomeFragment : Fragment() {
                 }
                 .setNegativeButton("Tidak", null)
                 .show()
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.home_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_search -> {
+                Toast.makeText(requireContext(), "Search clicked", Toast.LENGTH_SHORT).show()
+                true
+            }
+            R.id.action_settings -> {
+                Toast.makeText(requireContext(), "Settings clicked", Toast.LENGTH_SHORT).show()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 

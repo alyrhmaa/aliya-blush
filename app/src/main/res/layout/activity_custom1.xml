@@ -1,71 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:background="@color/background"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FDF4F7">
 
-    <!-- TOOLBAR -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/primary"
-        android:title="Custom 1"
-        android:titleTextColor="@android:color/white"/>
+        android:layout_height="?attr/actionBarSize"
+        android:background="#EC407A"
+        app:title="Program Bina Desa"
+        app:titleTextColor="@android:color/white" />
 
-    <!-- CONTENT -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:orientation="vertical"
-            android:padding="20dp"
-            android:gravity="center_horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
 
-            <!-- TITLE -->
-            <TextView
-                android:id="@+id/tvTitle"
-                android:text="Custom 1"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                android:textColor="@color/text_primary"
-                android:layout_marginBottom="8dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+            <!-- MaterialCardView untuk Konten Utama -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp"
+                app:strokeColor="#EC407A"
+                app:strokeWidth="1dp">
 
-            <!-- DESC -->
-            <TextView
-                android:id="@+id/tvDesc"
-                android:text="Deskripsi halaman custom"
-                android:textSize="14sp"
-                android:textColor="@color/text_primary"
-                android:layout_marginBottom="20dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:gravity="center">
 
-            <!-- GAMBAR -->
-            <ImageView
-                android:src="@android:drawable/ic_menu_gallery"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginBottom="20dp"/>
+                    <TextView
+                        android:id="@+id/tvTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pembangunan Infrastruktur"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="#C2185B" />
 
-            <!-- TEXT TAMBAHAN -->
-            <TextView
-                android:text="Ini adalah halaman custom 1 ✨"
-                android:textSize="16sp"
-                android:textColor="@color/text_primary"
-                android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:layout_marginTop="16dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/village" />
+
+                    <TextView
+                        android:id="@+id/tvDesc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Fokus utama program Bina Desa tahun ini adalah pengaspalan jalan tani dan perbaikan drainase untuk meningkatkan ekonomi masyarakat desa."
+                        android:textSize="16sp"
+                        android:textColor="#880E4F"
+                        android:lineSpacingExtra="4dp" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBack"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="24dp"
+                android:text="KEMBALI KE DASHBOARD"
+                android:backgroundTint="#EC407A"
+                app:cornerRadius="12dp" />
 
         </LinearLayout>
-
     </ScrollView>
-
 </LinearLayout>

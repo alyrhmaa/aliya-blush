@@ -20,11 +20,11 @@ class Splash_Activity : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
             
             // 1. Cek apakah Onboarding sudah pernah diselesaikan
-            val onboardingSelesai = getSharedPreferences("onboarding", Context.MODE_PRIVATE)
+            val onboardingSelesai =
+                getSharedPreferences("onboarding", Context.MODE_PRIVATE)
                 .getBoolean("selesai", false)
 
             if (!onboardingSelesai) {
-                // Jika belum pernah onboarding, ke halaman Onboarding
                 startActivity(Intent(this, OnBoardingActivity::class.java))
             } else {
                 // 2. Jika sudah onboarding, cek status login

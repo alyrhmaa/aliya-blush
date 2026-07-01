@@ -34,18 +34,32 @@
         <activity
             android:name=".Note.NoteFormActivity"
             android:exported="false" /> <!-- LAUNCHER -->
+
         <activity
-            android:name=".BaseActivity"
+            android:name=".Home.pertemuan_6.Splash_Activity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- AUTH / LOGIN -->
+        </activity>
+
+        <activity
+            android:name=".BaseActivity"
+            android:exported="false" />
+
         <activity
             android:name=".AuthActivity"
-            android:exported="false" /> <!-- KALKULATOR -->
+            android:exported="false" />
+
+        <activity
+            android:name=".Home.pertemuan_3.Register_Activity"
+            android:exported="false" />
+
+        <activity
+            android:name=".Home.pertemuan_3.Verification_Activity"
+            android:exported="false" />
+
         <activity
             android:name=".Home.pertemuan_2.MainActivity"
             android:exported="false" /> <!-- LOGIN LAMA -->
@@ -60,10 +74,7 @@
             android:exported="false" />
         <activity
             android:name=".Home.pertemuan_4.Custom2_Activity"
-            android:exported="false" /> <!-- SPLASH -->
-        <activity
-            android:name=".Home.pertemuan_6.Splash_Activity"
-            android:exported="false" /> <!-- WEBVIEW -->
+            android:exported="false" />
         <activity
             android:name=".Home.pertemuan_6.WebView_Activity"
             android:exported="false" />
