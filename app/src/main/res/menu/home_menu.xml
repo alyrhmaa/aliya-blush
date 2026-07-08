@@ -8,6 +8,11 @@
         app:showAsAction="ifRoom|collapseActionView"
         app:actionViewClass="androidx.appcompat.widget.SearchView" />
     <item
+        android:id="@+id/action_scan"
+        android:icon="@drawable/ic_qr_code_scanner"
+        android:title="QR Scan"
+        app:showAsAction="always" />
+    <item
         android:id="@+id/action_settings"
         android:icon="@drawable/ic_settings"
         android:title="Settings"

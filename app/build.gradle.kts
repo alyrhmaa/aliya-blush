@@ -1,7 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
     id("com.google.devtools.ksp")
-    // Tambahkan plugin kotlin android jika belum ada
     id("org.jetbrains.kotlin.android")
 }
 
@@ -38,6 +37,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
 
+    // Menggunakan kotlinOptions (abaikan peringatan deprecation sementara untuk kelancaran build)
     kotlinOptions {
         jvmTarget = "11"
     }
@@ -58,6 +58,20 @@ dependencies {
     implementation("androidx.room:room-ktx:$room_version")
     ksp("androidx.room:room-compiler:$room_version")
     
+    // CameraX
+    val camerax_version = "1.4.0"
+    implementation("androidx.camera:camera-core:$camerax_version")
+    implementation("androidx.camera:camera-camera2:$camerax_version")
+    implementation("androidx.camera:camera-lifecycle:$camerax_version")
+    implementation("androidx.camera:camera-view:$camerax_version")
+
+    // ML Kit Barcode Scanning
+    implementation("com.google.mlkit:barcode-scanning:17.3.0")
+
+    // ZXing for QR Generation
+    implementation("com.google.zxing:core:3.5.3")
+
+    // PERBAIKAN: Menggunakan titik (.) bukan tanda hubung (-) agar tidak dianggap operator minus
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

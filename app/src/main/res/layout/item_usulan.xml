@@ -8,28 +8,51 @@
     app:cardCornerRadius="12dp"
     app:cardElevation="4dp">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:padding="16dp">
 
-        <TextView
-            android:id="@+id/tvJudul"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Judul Usulan"
-            android:textSize="16sp"
-            android:textStyle="bold"/>
+            android:layout_toStartOf="@+id/btnDelete"
+            android:orientation="vertical"
+            android:layout_marginEnd="12dp">
 
-        <TextView
-            android:id="@+id/tvDeskripsi"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Deskripsi Usulan"
-            android:textSize="14sp"/>
+            <TextView
+                android:id="@+id/tvJudul"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Judul Usulan"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#AD1457"/>
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/tvDeskripsi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Deskripsi Usulan"
+                android:textSize="14sp"
+                android:textColor="#555555"/>
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btnDelete"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:padding="2dp"
+            android:scaleType="fitCenter"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_delete"
+            app:tint="#D81B60"
+            android:contentDescription="Hapus Usulan" />
+
+    </RelativeLayout>
 
 </com.google.android.material.card.MaterialCardView>

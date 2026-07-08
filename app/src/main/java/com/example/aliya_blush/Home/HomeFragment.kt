@@ -19,6 +19,10 @@ import com.example.aliya_blush.AuthActivity
 import com.example.aliya_blush.Data.Api.PostApiClient
 import com.example.aliya_blush.Home.berita.PhotoAdapter
 import com.example.aliya_blush.Home.berita.PostAdapter
+import com.example.aliya_blush.Home.pertemuan_10.TenthActivity
+import com.example.aliya_blush.Home.pertemuan_11.CameraFeatureActivity
+import com.example.aliya_blush.Home.pertemuan_11.QrGeneratorActivity
+import com.example.aliya_blush.Home.pertemuan_11.QrScannerActivity
 import com.example.aliya_blush.Home.pertemuan_2.MainActivity
 import com.example.aliya_blush.Home.pertemuan_4.Custom1_Activity
 import com.example.aliya_blush.Home.pertemuan_4.Custom2_Activity
@@ -89,12 +93,13 @@ class HomeFragment : Fragment() {
             )
         }
 
-        // Custom 1
+        // Bina Desa (Tab & ViewPager) - Menggunakan tombol Custom 1
+        binding.btnToCustom1.text = "Bina Desa (Tab)"
         binding.btnToCustom1.setOnClickListener {
             startActivity(
                 Intent(
                     requireContext(),
-                    Custom1_Activity::class.java
+                    TenthActivity::class.java
                 )
             )
         }
@@ -117,6 +122,19 @@ class HomeFragment : Fragment() {
                     WebView_Activity::class.java
                 )
             )
+        }
+
+        // --- FITUR KAMERA & QR ---
+        binding.btnToCamera.setOnClickListener {
+            startActivity(Intent(requireContext(), CameraFeatureActivity::class.java))
+        }
+
+        binding.btnToGenerator.setOnClickListener {
+            startActivity(Intent(requireContext(), QrGeneratorActivity::class.java))
+        }
+
+        binding.btnToScanner.setOnClickListener {
+            startActivity(Intent(requireContext(), QrScannerActivity::class.java))
         }
 
         // Logout

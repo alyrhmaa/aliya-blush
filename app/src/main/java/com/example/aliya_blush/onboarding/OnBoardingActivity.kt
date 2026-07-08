@@ -13,11 +13,11 @@ class OnBoardingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // JIKA SEBENARNYA SUDAH SELESAI, JANGAN TAMPILKAN LAGI
-        val onboardingSelesai = getSharedPreferences("onboarding", MODE_PRIVATE)
-            .getBoolean("selesai", false)
+        // Cek apakah sebenarnya sudah selesai menggunakan key yang konsisten
+        val isOnboardingDone = getSharedPreferences("onboarding_pref", MODE_PRIVATE)
+            .getBoolean("is_onboarding_done", false)
         
-        if (onboardingSelesai) {
+        if (isOnboardingDone) {
             startActivity(Intent(this, AuthActivity::class.java))
             finish()
             return

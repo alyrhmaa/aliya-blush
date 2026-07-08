@@ -9,7 +9,8 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.example.aliya_blush.About.AboutFragment
 import com.example.aliya_blush.Home.HomeFragment
-import com.example.aliya_blush.More.ProfileFragment
+
+import com.example.aliya_blush.Profile.ProfileFragment
 import com.example.aliya_blush.Note.FragmentNote
 import com.example.aliya_blush.Usulan.UsulanFragment
 import com.example.aliya_blush.databinding.ActivityBaseBinding
@@ -22,11 +23,11 @@ class BaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // CEK ONBOARDING
+        // 1. CEK ONBOARDING (Gunakan kunci yang sudah diselaraskan: onboarding_pref)
         val onboardingSelesai = getSharedPreferences(
-            "onboarding",
+            "onboarding_pref",
             MODE_PRIVATE
-        ).getBoolean("selesai", false)
+        ).getBoolean("is_onboarding_done", false)
 
         if (!onboardingSelesai) {
             startActivity(Intent(this, OnBoardingActivity::class.java))
@@ -34,7 +35,7 @@ class BaseActivity : AppCompatActivity() {
             return
         }
 
-        // CEK LOGIN
+        // 2. CEK LOGIN
         val isLogin = getSharedPreferences(
             "user_pref",
             MODE_PRIVATE

@@ -21,13 +21,14 @@ class Tutorial3Fragment :
         view.findViewById<Button>(R.id.btnMulai)
             .setOnClickListener {
 
+                // Simpan status onboarding selesai dengan key yang konsisten
                 requireContext()
                     .getSharedPreferences(
-                        "onboarding",
+                        "onboarding_pref",
                         Context.MODE_PRIVATE
                     )
                     .edit()
-                    .putBoolean("selesai", true)
+                    .putBoolean("is_onboarding_done", true)
                     .apply()
 
                 startActivity(

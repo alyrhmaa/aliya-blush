@@ -19,29 +19,27 @@ class Splash_Activity : AppCompatActivity() {
 
         Handler(Looper.getMainLooper()).postDelayed({
             
-            // 1. Cek apakah Onboarding sudah pernah diselesaikan
-            val onboardingSelesai =
-                getSharedPreferences("onboarding", Context.MODE_PRIVATE)
-                .getBoolean("selesai", false)
+            // Menggunakan file preference "onboarding_pref"
+            val onboardingPref = getSharedPreferences("onboarding_pref", Context.MODE_PRIVATE)
+            val isDone = onboardingPref.getBoolean("is_onboarding_done", false)
 
-            if (!onboardingSelesai) {
+            if (!isDone) {
+                // Jika belum selesai onboarding, arahkan ke Onboarding
                 startActivity(Intent(this, OnBoardingActivity::class.java))
             } else {
-                // 2. Jika sudah onboarding, cek status login
-                val isLogin = getSharedPreferences("user_pref", Context.MODE_PRIVATE)
-                    .getBoolean("isLogin", false)
+                // Jika sudah, cek status login
+                val loginPref = getSharedPreferences("user_pref", Context.MODE_PRIVATE)
+                val isLogin = loginPref.getBoolean("isLogin", false)
 
                 if (isLogin) {
-                    // Jika sudah login, ke Home (BaseActivity)
                     startActivity(Intent(this, BaseActivity::class.java))
                 } else {
-                    // Jika belum login, ke halaman Auth/Login
                     startActivity(Intent(this, AuthActivity::class.java))
                 }
             }
             
             finish()
 
-        }, 2000) // Delay 2 detik
+        }, 3000)
     }
 }

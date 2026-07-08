@@ -1,4 +1,4 @@
-package com.example.aliya_blush.More
+package com.example.aliya_blush.Profile
 
 import android.content.Intent
 import android.net.Uri

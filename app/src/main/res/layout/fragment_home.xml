@@ -31,7 +31,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingBottom="32dp">
 
             <View
                 android:id="@+id/background_header"
@@ -91,85 +92,163 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/headerCard" />
 
-            <!-- GRID BUTTONS (2 PER BARIS) -->
             <androidx.gridlayout.widget.GridLayout
                 android:id="@+id/gridExtraButtons"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="12dp"
                 app:columnCount="2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvMenu">
 
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/cardLayanan"
+                    style="@style/Widget.MaterialComponents.Button"
                     android:layout_width="0dp"
-                    android:layout_height="100dp"
-                    android:layout_margin="4dp"
-                    app:cardBackgroundColor="#EC407A"
-                    app:cardCornerRadius="15dp"
-                    app:layout_columnWeight="1">
+                    android:layout_height="80dp"
+                    android:layout_margin="6dp"
+                    android:text="Layanan"
+                    android:textAllCaps="false"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="#EC407A"
+                    app:cornerRadius="16dp"
+                    app:layout_columnWeight="1" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Layanan"
-                            android:textColor="@android:color/white"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnToKalkulator"
+                    style="@style/Widget.MaterialComponents.Button"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="4dp"
-                    android:backgroundTint="#D81B60"
+                    android:layout_height="80dp"
+                    android:layout_margin="6dp"
                     android:text="Kalkulator"
+                    android:textAllCaps="false"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="#D81B60"
+                    app:cornerRadius="16dp"
                     app:layout_columnWeight="1" />
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnToCustom1"
+                    style="@style/Widget.MaterialComponents.Button"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="4dp"
-                    android:backgroundTint="#C2185B"
-                    android:text="Custom 1"
+                    android:layout_height="80dp"
+                    android:layout_margin="6dp"
+                    android:text="Bina Desa (Tab)"
+                    android:textAllCaps="false"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="#C2185B"
+                    app:cornerRadius="16dp"
                     app:layout_columnWeight="1" />
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnToCustom2"
+                    style="@style/Widget.MaterialComponents.Button"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="4dp"
-                    android:backgroundTint="#AD1457"
+                    android:layout_height="80dp"
+                    android:layout_margin="6dp"
                     android:text="Custom 2"
+                    android:textAllCaps="false"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="#AD1457"
+                    app:cornerRadius="16dp"
                     app:layout_columnWeight="1" />
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnToWeb"
+                    style="@style/Widget.MaterialComponents.Button"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="4dp"
-                    android:backgroundTint="#880E4F"
+                    android:layout_height="80dp"
+                    android:layout_margin="6dp"
                     android:text="Web Desa"
+                    android:textAllCaps="false"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="#880E4F"
+                    app:cornerRadius="16dp"
                     app:layout_columnWeight="1" />
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnLogout"
+                    style="@style/Widget.MaterialComponents.Button"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="4dp"
-                    android:backgroundTint="#560027"
+                    android:layout_height="80dp"
+                    android:layout_margin="6dp"
                     android:text="Logout"
+                    android:textAllCaps="false"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="#560027"
+                    app:cornerRadius="16dp"
+                    app:layout_columnWeight="1" />
+            </androidx.gridlayout.widget.GridLayout>
+
+            <TextView
+                android:id="@+id/tvCameraQr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:text="Fitur Kamera &amp; QR"
+                android:textColor="#C2185B"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/gridExtraButtons" />
+
+            <androidx.gridlayout.widget.GridLayout
+                android:id="@+id/gridCameraQr"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="12dp"
+                app:columnCount="3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvCameraQr">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnToCamera"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="0dp"
+                    android:layout_height="70dp"
+                    android:layout_margin="4dp"
+                    android:text="Kamera"
+                    android:textAllCaps="false"
+                    android:textSize="12sp"
+                    app:backgroundTint="#C2185B"
+                    app:cornerRadius="12dp"
+                    app:layout_columnWeight="1" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnToGenerator"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="0dp"
+                    android:layout_height="70dp"
+                    android:layout_margin="4dp"
+                    android:text="QR Gen"
+                    android:textAllCaps="false"
+                    android:textSize="12sp"
+                    app:backgroundTint="#AD1457"
+                    app:cornerRadius="12dp"
+                    app:layout_columnWeight="1" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnToScanner"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="0dp"
+                    android:layout_height="70dp"
+                    android:layout_margin="4dp"
+                    android:text="QR Scan"
+                    android:textAllCaps="false"
+                    android:textSize="12sp"
+                    app:backgroundTint="#880E4F"
+                    app:cornerRadius="12dp"
                     app:layout_columnWeight="1" />
             </androidx.gridlayout.widget.GridLayout>
 
@@ -185,7 +264,7 @@
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/gridExtraButtons" />
+                app:layout_constraintTop_toBottomOf="@id/gridCameraQr" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvBerita"
@@ -214,9 +293,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:layout_marginBottom="32dp"
                 android:paddingHorizontal="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvGalleryTitle" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FFF1F5">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#EC407A"
+        app:title="Camera Feature"
+        app:titleTextColor="#FFFFFF" />
+
+    <ImageView
+        android:id="@+id/ivPreview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_house"
+        android:background="#FFFFFF" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCapture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Ambil Foto"
+        app:backgroundTint="#EC407A"
+        app:cornerRadius="12dp" />
+
+</LinearLayout>
